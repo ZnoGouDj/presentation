@@ -85,11 +85,11 @@
 
 > The basic garbage collection algorithm is called “mark-and-sweep”.
 > The following “garbage collection” steps are regularly performed:
-> *The garbage collector takes roots and “marks” (remembers) them*.
-> *Then it visits and “marks” all references from them.
-> *Then it visits marked objects and marks their references. All visited objects are remembered, so as not to visit the same object twice in the future.
-> *…And so on until every reachable (from the roots) references are visited.
-> *All objects except marked ones are removed.
+> * The garbage collector takes roots and “marks” (remembers) them.
+> * Then it visits and “marks” all references from them.
+> * Then it visits marked objects and marks their references. All visited objects are remembered, so as not to visit the same object twice in the future.
+> * …And so on until every reachable (from the roots) references are visited.
+> * All objects except marked ones are removed.
 
 > #### Slide 18
 
@@ -118,19 +118,19 @@
 
 > Some of the optimizations:
 
-> ***Generational collection*** – objects are split into two sets: “new ones” and “old ones”. Many objects appear, do their job and die fast, they can be cleaned up aggressively. Those that survive for long enough, become “old” and are examined less often.
-> ***Incremental collection*** – if there are many objects, and we try to walk and mark the whole object set at once, it may take some time and introduce visible delays in the execution. So the engine tries to split the garbage collection into pieces. Then the pieces are executed one by one, separately. That requires some extra bookkeeping between them to track changes, but we have many tiny delays instead of a big one.
-> ***Idle-time collection*** – the garbage collector tries to run only while the CPU is idle, to reduce the possible effect on the execution.
+> * ***Generational collection*** – objects are split into two sets: “new ones” and “old ones”. Many objects appear, do their job and die fast, they can be cleaned up aggressively. Those that survive for long enough, become “old” and are examined less often.
+> * ***Incremental collection*** – if there are many objects, and we try to walk and mark the whole object set at once, it may take some time and introduce visible delays in the execution. So the engine tries to split the garbage collection into pieces. Then the pieces are executed one by one, separately. That requires some extra bookkeeping between them to track changes, but we have many tiny delays instead of a big one.
+> * ***Idle-time collection*** – the garbage collector tries to run only while the CPU is idle, to reduce the possible effect on the execution.
 
 > #### Slide 24
 
 > In conclusion, let me sum up my main points.
 > The main things to know:
-> *Garbage collection is performed automatically. We cannot force or prevent it.
-> *Objects are retained in memory while they are reachable.
-> *Being referenced is not the same as being reachable (from a root): a pack of interlinked objects can become unreachable as a whole.
-> *Modern engines implement advanced algorithms of garbage collection.
-> *In-depth knowledge of engines is good when you need low-level optimizations. It would be wise to plan that as the next step after you’re familiar with the language.
+> * Garbage collection is performed automatically. We cannot force or prevent it.
+> * Objects are retained in memory while they are reachable.
+> * Being referenced is not the same as being reachable (from a root): a pack of interlinked objects can become unreachable as a whole.
+> * Modern engines implement advanced algorithms of garbage collection.
+> * In-depth knowledge of engines is good when you need low-level optimizations. It would be wise to plan that as the next step after you’re familiar with the language.
 
 > #### Slide 25
 
