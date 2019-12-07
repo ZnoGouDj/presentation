@@ -141,4 +141,4 @@
 
 > #### Slide 27
 
-> So, thank you for your attention. Now I am happy to answer any questions you might have.
+> It was a little introduction to garbage collection since this is a bit topic. I told you the basic information and showed the basic examples. So, thank you for your attention. Now I am happy to answer any questions you might have.
