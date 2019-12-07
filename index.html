@@ -27,6 +27,14 @@
 			<div class="slides">
 				<section><h1>Garbage collection</h1></section>
 				<section><h1>Reachability</h1></section>
+				<section>
+					<ul>
+						<li>Local variables and parameters of the current function.</li>
+						<li>Variables and parameters for other functions on the current chain of nested calls.</li>
+						<li>Global variables.</li>
+						<li>(there are some other, internal ones as well)</li>
+					</ul>
+				</section>
 				<section><h3>A simple example</h3><img src="./assets/img/beforeScheme1.png" alt="beforeScheme1"></section>
 				<section class="makeSmaller"><img src="./assets/img/scheme1.jpg" alt="scheme1"></section>
 				<section><img src="./assets/img/beforeScheme2.png" alt="beforeScheme2"></section>
@@ -42,6 +50,15 @@
 				<section class="makeSmaller"><img src="./assets/img/scheme7.jpg" alt="scheme7"></section>
 				<section><h3>Unreachable island</h3><img src="./assets/img/beforeScheme8.png" alt="beforeScheme8"></section>
 				<section><img src="./assets/img/scheme8.jpg" alt="scheme8"></section>
+				<section>
+					<ul>
+						<li>The garbage collector takes roots and "marks" them.</li>
+						<li>It visits and "marks" all references from them.</li>
+						<li>It visits marked objects and marks their references.</li>
+						<li>...And so on until every reachable references are visited.</li>
+						<li>All objects except marked ones are removed.</li>
+					</ul>
+				</section>
 				<section><h3>Internal algorithms</h3><img src="./assets/img/scheme9.jpg" alt="scheme9"></section>
 				<section><img src="./assets/img/scheme10.jpg" alt="scheme10"></section>
 				<section><img src="./assets/img/scheme11.jpg" alt="scheme11"></section>
