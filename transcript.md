@@ -61,31 +61,34 @@
 
 > #### Slide 13
 
-> Now let’s remove two references:
-> It’s not enough to delete only one of these two references, because all objects would still be reachable.
+> Now let’s remove two references.
 
 > #### Slide 14
+
+> It’s not enough to delete only one of these two references, because all objects would still be reachable.
+
+> #### Slide 15
 
 > But if we delete both, then we can see that John has no incoming reference any more.
 > Outgoing references do not matter. Only incoming ones can make an object reachable. So, John is now unreachable and will be removed from the memory with all its data that also became unaccessible.
 
-> #### Slide 15
+> #### Slide 16
 
 > After garbage collection:
 
-> #### Slide 16
-
-> It is possible that the whole island of interlinked objects becomes unreachable and is removed from the memory.
-> The source object is the same as above. Then:
-
 > #### Slide 17
 
+> It is possible that the whole island of interlinked objects becomes unreachable and is removed from the memory.
+> The source object is the same as before. Then:
+
+> #### Slide 18
+
 > The in-memory picture becomes:
->This example demonstrates how important the concept of reachability is.
+> This example demonstrates how important the concept of reachability is.
 > It’s obvious that John and Ann are still linked, both have incoming references. But that’s not enough.
 > The former "family" object has been unlinked from the root, there’s no reference to it any more, so the whole island becomes unreachable and will be removed.
 
-> #### Slide 18
+> #### Slide 19
 
 > The basic garbage collection algorithm is called “mark-and-sweep”.
 > The following “garbage collection” steps are regularly performed:
@@ -95,30 +98,30 @@
 > * …And so on until every reachable (from the roots) references are visited.
 > * All objects except marked ones are removed.
 
-> #### Slide 19
+> #### Slide 20
 
 > For instance, let our object structure look like this:
 > We can clearly see an “unreachable island” to the right side. Now let’s see how “mark-and-sweep” garbage collector deals with it.
 
-> #### Slide 20
+> #### Slide 21
 
 > The first step marks the roots:
 
-> #### Slide 21
+> #### Slide 22
 
 > Then their references are marked:
 
-> #### Slide 22
+> #### Slide 23
 
 > …And their references, while possible:
 
-> #### Slide 23
+> #### Slide 24
 
 > Now the objects that could not be visited in the process are considered unreachable and will be removed:
 > We can also imagine the process as spilling a huge bucket of paint from the roots, that flows through all references and marks all reachable objects. The unmarked ones are then removed.
 > That’s the concept of how garbage collection works. JavaScript engines apply many optimizations to make it run faster and not affect the execution.
 
-> #### Slide 24
+> #### Slide 25
 
 > Some of the optimizations:
 
@@ -126,7 +129,7 @@
 > * ***Incremental collection*** – if there are many objects, and we try to walk and mark the whole object set at once, it may take some time and introduce visible delays in the execution. So the engine tries to split the garbage collection into pieces. Then the pieces are executed one by one, separately. That requires some extra bookkeeping between them to track changes, but we have many tiny delays instead of a big one.
 > * ***Idle-time collection*** – the garbage collector tries to run only while the CPU is idle, to reduce the possible effect on the execution.
 
-> #### Slide 25
+> #### Slide 26
 
 > In conclusion, let me sum up my main points.
 > The main things to know:
@@ -136,6 +139,6 @@
 > * Modern engines implement advanced algorithms of garbage collection.
 > * In-depth knowledge of engines is good when you need low-level optimizations. It would be wise to plan that as the next step after you’re familiar with the language.
 
-> #### Slide 26
+> #### Slide 27
 
 > So, thank you for your attention. Now I am happy to answer any questions you might have.
