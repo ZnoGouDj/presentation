@@ -1,7 +1,7 @@
 ### Garbage collection
 
 > #### Slide 1
-> Garbage collection is when the JavaScript's engine that runs your code freeze of memory for you automatically. In many lower level programming languages you have more control of memory. It means that you might be able to say "reserve this part of memory for me!". And also you might have to say "free up this part of memory for me!". And JavaScript don't do that. 
+> Garbage collection is when the JavaScript's engine that runs your code freeze of memory for you automatically. In many lower level programming languages you have more control of memory. It means that you might be able to say "reserve this part of memory for me!". And also you might have to say "free up this part of memory for me!". And JavaScript doesn't do that. 
 > Memory management in JavaScript is performed automatically and invisibly to us. We create primitives, objects, functions… All that takes memory.
 > What happens when something is not needed anymore? How does the JavaScript engine discover it and clean it up?
 
