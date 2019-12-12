@@ -1,14 +1,14 @@
 ### Garbage collection
 
 > #### Slide 1
-> Garbage collection is when the JavaScript's engine that runs your code freeze of memory for you automatically. In many lower level programming languages you have more control of memory. It means that you might be able to say "reserve this part of memory for me!". And also you might have to say "free up this part of memory for me!". And JavaScript don't do that. 
+> Garbage collection is when the JavaScript's engine that runs your code freeze of memory for you automatically. In many lower level programming languages you have more control of memory. It means that you might be able to say "reserve this part of memory for me!". And also you might have to say "free up this part of memory for me!". And JavaScript doesn't do that. 
 > Memory management in JavaScript is performed automatically and invisibly to us. We create primitives, objects, functions… All that takes memory.
 > What happens when something is not needed anymore? How does the JavaScript engine discover it and clean it up?
 
 > #### Slide 2
 
 > The main concept of memory management in JavaScript is ***reachability***.
-> Simply put, “reachable” values are those that are accessible or usable somehow. They are guaranteed to be stored in memory.
+> In simple words, “reachable” values are those that are accessible or usable somehow. They are guaranteed to be stored in memory.
 > There’s a base set of inherently reachable values, that cannot be deleted for obvious reasons.
 
 > #### Slide 3
@@ -21,7 +21,7 @@
 
 > These values are called roots.
 > Any other value is considered reachable if it’s reachable from a root by a reference or by a chain of references.
-> For instance, if there’s an object in a local variable, and that object has a property referencing another object, that object is considered reachable. And those that it references are also reachable. Detailed examples to follow.
+> For instance, if there’s an object in a local variable, and that object has a property referencing another object, that object is considered reachable. And those that it references are also reachable. 
 > There’s a background process in the JavaScript engine that is called garbage collector. It monitors all objects and removes those that have become unreachable.
 
 > #### Slide 4
@@ -30,7 +30,7 @@
 
 > #### Slide 5
 
-> Here the arrow depicts an object reference. The global variable "user" references the object {name: "John"} (we’ll call it John for brevity). The "name" property of John stores a primitive, so it’s painted inside the object.
+> Here the arrow depicts an object reference. The global variable "user" references the object {name: "John"}. The "name" property of John stores a primitive, so it’s painted inside the object.
 
 > #### Slide 6
 
@@ -47,7 +47,7 @@
 > #### Slide 10
 
 > Now if we do the same:
-> …Then the object is still reachable via admin global variable, so it’s in memory. If we overwrite admin too, then it can be removed.
+> …Then the object is still reachable because of admin global variable, so it’s in memory. If we overwrite admin too, then it can be removed.
 
 > #### Slide 11
 
@@ -136,9 +136,9 @@
 > * Garbage collection is performed automatically. We cannot force or prevent it.
 > * Objects are retained in memory while they are reachable.
 > * Being referenced is not the same as being reachable (from a root): a pack of interlinked objects can become unreachable as a whole.
-> * Modern engines implement advanced algorithms of garbage collection.
-> * In-depth knowledge of engines is good when you need low-level optimizations. It would be wise to plan that as the next step after you’re familiar with the language.
+> Modern engines implement advanced algorithms of garbage collection.
+> In-depth knowledge of engines is good when you need low-level optimizations. It would be wise to plan that as the next step after you’re familiar with the language.
 
 > #### Slide 27
 
-> It was a little introduction to garbage collection since this is a bit topic. I told you the basic information and showed the basic examples. So, thank you for your attention. Now I am happy to answer any questions you might have.
+> It was a little introduction to garbage collection since this is a big topic. I told you the basic information and showed the basic examples. Anyway,  I hope you enjoyed this presentation, thank you for your attention. !Don't read this => (Now I am happy to answer any questions you might have.)
