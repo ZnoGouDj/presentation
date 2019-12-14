@@ -25,8 +25,11 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section><h1>Garbage collection</h1></section>
-				<section><h1>Reachability</h1></section>
+				<section><img src="./assets/img/garbage-collection-intro.jpg" alt="gc"></section>
+				<section><img src="./assets/img/lower-level-programming-languages.jpg" alt="ll"></section>
+				<section><img src="./assets/img/JS-doesnt-do-that.jpg" alt="JS"></section>
+
+				<section><h1>Reachability</h1><img src="./assets/img/reachability.gif" alt="reachability"></section>
 				<section>
 					<ul>
 						<li>Local variables and parameters of the current function.</li>
@@ -35,6 +38,7 @@
 						<li>(there are some other, internal ones as well)</li>
 					</ul>
 				</section>
+				<section><img src="./assets/img/reachable-from-roots.png" alt="fromTheRoots"></section>
 				<section><h3>A simple example</h3><img src="./assets/img/beforeScheme1.png" alt="beforeScheme1"></section>
 				<section class="makeSmaller"><img src="./assets/img/scheme1.jpg" alt="scheme1"></section>
 				<section><img src="./assets/img/beforeScheme2.png" alt="beforeScheme2"></section>
@@ -50,6 +54,7 @@
 				<section class="makeSmaller"><img src="./assets/img/scheme7.jpg" alt="scheme7"></section>
 				<section><h3>Unreachable island</h3><img src="./assets/img/beforeScheme8.png" alt="beforeScheme8"></section>
 				<section><img src="./assets/img/scheme8.jpg" alt="scheme8"></section>
+				<section><img src="./assets/img/markAndSweep.jpg" alt="markAndSweep"></section>
 				<section>
 					<ul>
 						<li>The garbage collector takes roots and "marks" them.</li>
@@ -72,6 +77,14 @@
 						<li>Idle-time collection</li>
 					</ul>
 				</section>
+				<section><img src="./assets/img/generational-gc.png" alt="generational"></section>
+				<section><img src="./assets/img/generational.gif" alt="generational"></section>
+				<section><img src="./assets/img/incremental-gc.png" alt="incremental"></section>
+				<section><img src="./assets/img/idle-time-gc.png" alt="idle"></section>
+				<section><img src="./assets/img/automatic-gc.jpg" alt="agc"></section>
+				<section><img src="./assets/img/reachable-from-roots.png" alt="rftr"></section>
+				<section><img src="./assets/img/scheme8.jpg" alt="8"></section>
+
 				<section>
 					<h1>Summary</h1>
 					<h3>The main things to know:</h3>
